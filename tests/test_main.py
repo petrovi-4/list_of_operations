@@ -1,11 +1,11 @@
 import pytest
-from src.main import (format_card_number, format_account_number, sort_by_date,
-                      print_last_5_operations)
+from src.utils import (format_card_number, format_account_number, sort_by_date,
+                       print_last_5_operations)
 
 
 @pytest.mark.parametrize("input_number, expected_output", [
-    ("1234567890123456", "123456 XX** **** 3456"),
-    ("9876543210987654", "987654 XX** **** 7654"),
+	("1234567890123456", "1234 56** **** 3456"),
+	("9876543210987654", "9876 54** **** 7654"),
 ])
 def test_format_card_number(input_number, expected_output):
 	"""
@@ -17,8 +17,8 @@ def test_format_card_number(input_number, expected_output):
 
 
 @pytest.mark.parametrize("input_number, expected_output", [
-    ("123456789", "**6789"),
-    ("987654321", "**4321"),
+	("123456789", "**6789"),
+	("987654321", "**4321"),
 ])
 def test_format_account_number(input_number, expected_output):
 	"""
